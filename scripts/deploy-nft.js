@@ -19,4 +19,4 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-// m3m3 address: 0x10cDed9E35b83fb47d9091005079F5f03408Bdc9
+// m3m3 address: 0x714eD56B2dA2f6CF4A583507bF3CF15313989E1B

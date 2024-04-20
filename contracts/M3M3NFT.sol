@@ -11,11 +11,13 @@ contract M3M3NFT is ERC721("M3M3 NFT", "M3M3"), Ownable(msg.sender) {
 
     // External Functions
 
-    function mint(uint256 tokenId) external payable {
-        require(msg.value == 10 ** 15, "mint error.");
+    function mint(uint256 amount) external payable {
+        require(msg.value == amount * 10 ** 15, "mint error.");
 
-        _mint(_msgSender(), tokenIdLength);
-        tokenId++;
+        for (uint i = 0; i < amount; i++) {
+            _mint(_msgSender(), tokenIdLength);
+            tokenIdLength ++;
+        }
     }
 
     function withdraw() external onlyOwner {
