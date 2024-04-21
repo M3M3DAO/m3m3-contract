@@ -19,4 +19,4 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-// m3m3 voting address: 0x7dfBf7f162A7D2dBd185Fb8d648B467fc531379F
+// m3m3 voting address: 0xd0cF7C434bbA6Ae95e9580ea0dC3020255D2fBa1

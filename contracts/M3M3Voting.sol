@@ -69,7 +69,7 @@ contract M3M3Voting is Ownable(msg.sender) {
             if (m3m3nft.ownerOf(i) == _msgSender()) {
                 m3m3nft.transferFrom(_msgSender(), address(this), i);
                 remainAmount++;
-                metadata.participant++;
+                _metadatas[highestId].participant++;
 
                 if (remainAmount == buyAmount) break;
             }
