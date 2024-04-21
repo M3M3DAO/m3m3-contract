@@ -17,6 +17,7 @@ contract M3M3Voting is Ownable(msg.sender) {
         uint256 like;
         uint256 supply;
         uint256 allocation;
+        uint256 participant;
     }
 
     mapping(uint256 projectId => MetaData) internal _metadatas;
@@ -31,6 +32,8 @@ contract M3M3Voting is Ownable(msg.sender) {
 
     function submit(MetaData memory _metadata) external {
         _metadatas[projectIdLength] = _metadata;
+        _metadatas[projectIdLength].like = 0;
+        _metadatas[projectIdLength].participant = 0;
         projectIdLength++;
     }
 
@@ -66,6 +69,7 @@ contract M3M3Voting is Ownable(msg.sender) {
             if (m3m3nft.ownerOf(i) == _msgSender()) {
                 m3m3nft.transferFrom(_msgSender(), address(this), i);
                 remainAmount++;
+                metadata.participant++;
 
                 if (remainAmount == buyAmount) break;
             }
